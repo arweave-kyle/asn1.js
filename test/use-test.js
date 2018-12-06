@@ -24,7 +24,7 @@ describe('asn1.js models', function() {
         );
       });
 
-      const data = {a: new bn(1), sub: {b: new Buffer("XXX")}};
+      const data = {a: new bn(1), sub: {b: Buffer.from("XXX")}};
       const wire = Model.encode(data, 'der');
       assert.equal(wire.toString('hex'), '300a02010130050403585858');
       const back = Model.decode(wire, 'der');
@@ -44,7 +44,7 @@ describe('asn1.js models', function() {
         );
       });
 
-      const data = {a: new bn(1), sub: {x: new Buffer("123")}};
+      const data = {a: new bn(1), sub: {x: Buffer.from("123")}};
       const wire = Model.encode(data, 'der');
       assert.equal(wire.toString('hex'), '300a020101a0050403313233');
       const back = Model.decode(wire, 'der');
@@ -64,7 +64,7 @@ describe('asn1.js models', function() {
         );
       });
 
-      const data = {a: new bn(1), sub: {x: new Buffer("123")}};
+      const data = {a: new bn(1), sub: {x: Buffer.from("123")}};
       const wire = Model.encode(data, 'der');
       assert.equal(wire.toString('hex'), '300c020101a00730050403313233');
       const back = Model.decode(wire, 'der');
@@ -88,7 +88,7 @@ describe('asn1.js models', function() {
         );
       });
 
-      const data = {a: new bn(1), sub: {x: new Buffer("123")}};
+      const data = {a: new bn(1), sub: {x: Buffer.from("123")}};
       const wire = Model.encode(data, 'der');
       assert.equal(wire.toString('hex'), '300a02010130050403313233');
       const back = Model.decode(wire, 'der');

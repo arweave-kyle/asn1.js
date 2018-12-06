@@ -16,7 +16,7 @@ describe('asn1.js PEM encoder/decoder', function() {
     );
   });
 
-  const hundred = new Buffer(100);
+  const hundred = Buffer.alloc(100);
   hundred.fill('A');
 
   it('should encode PEM', function() {
